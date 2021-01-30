@@ -19,6 +19,7 @@ namespace YouTubeTV
         public MainForm()
         {
             CefSettings settings = new CefSettings();
+            settings.UserAgent = "SMART-TV; Tizen 4.0";
             settings.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\YouTubeTV\cache";
             CefSharp.Cef.Initialize(settings);
             InitializeComponent();

@@ -11,6 +11,8 @@ namespace YouTubeTV
         internal static String cfgLoc = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\YouTubeTV\settings.json";
         internal static Config InitConfig()
         {
+            var loc = Path.GetDirectoryName(cfgLoc);
+            if (!Directory.Exists(loc)) Directory.CreateDirectory(loc);
             Config cfg = null;
             String configFile = "";
             try
